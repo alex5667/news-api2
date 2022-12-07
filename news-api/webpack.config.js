@@ -12,6 +12,11 @@ const baseConfig = {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
+            {
+                test: /\.ts$/,
+                include: [path.resolve(__dirname, 'src')],
+                use: 'ts-loader',
+            }
         ],
     },
     resolve: {
