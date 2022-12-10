@@ -5,7 +5,8 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "lib": [
-      "es7"
+      "ESNext",
+      "dom",
     ],
     "module": "commonjs",
     "target": "esnext",
@@ -19,7 +20,7 @@
     "strict": true,
     "declaration": true,
     "sourceMap": true,
-    "allowJs": true
+    "allowJs": true,
   },
   "exclude": [
     "src/**/*.spec.*",
