@@ -11,21 +11,37 @@ export interface SourcesData {
     country: string
 }
 
+export interface NewsData {
+    source: {
+        id: number,
+        name: string
+    },
+    author: string,
+    title: string,
+    description: string,
+    url: string,
+    urlToImage: string,
+    publishedAt: string,
+    content: string,
+}
+
+
+
 export interface drawNewsData {
     status: string,
     totalResults: number,
-    articles :SourcesData
+    articles: NewsData[]
 }
 
 export interface drawSourcesData {
     status: string,
-    sources :SourcesData
+    sources: SourcesData[]
 }
 
 
 export class AppView {
-    news:News;
-    sources:Sources;
+    news: News;
+    sources: Sources;
     constructor() {
         this.news = new News();
         this.sources = new Sources();
@@ -33,10 +49,11 @@ export class AppView {
 
     drawNews(data: drawNewsData) {
         const values = data?.articles ? data?.articles : [];
+
         this.news.draw(values);
     }
 
-    drawSources(data:drawSourcesData) {
+    drawSources(data: drawSourcesData) {
         const values = data?.sources ? data?.sources : [];
         this.sources.draw(values);
     }
