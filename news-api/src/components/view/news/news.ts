@@ -1,22 +1,22 @@
 import './news.css';
-export interface Data {
-    "source": {
-        "id": number,
-        "name": string
+export interface NewsData {
+    source: {
+        id: number,
+        name: string
     },
-    "author": string,
-    "title": string,
-    "description": string,
-    "url": string,
-    "urlToImage": string,
-    "publishedAt": string,
-    "content": string,
+    author: string,
+    title: string,
+    description: string,
+    url: string,
+    urlToImage: string,
+    publishedAt: string,
+    content: string,
 }
 
 
 
 class News {
-    draw(data: readonly Data[]) {
+    draw(data: readonly NewsData[]) {
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
         const fragment = document.createDocumentFragment();
         const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
