@@ -1,11 +1,26 @@
+
+export interface IOptions {
+    [key:string]:string
+}
+
+export interface IGetSources 
+{
+    endpoint: string,
+    options: {
+        sources: string,
+    },
+}
+
 class Loader {
-    constructor(baseLink, options) {
+    baseLink: string;
+    options:IOptions;
+    constructor(baseLink:string, options:IOptions) {
         this.baseLink = baseLink;
         this.options = options;
     }
 
     getResp(
-        { endpoint, options = {} },
+        { endpoint, options = {} }:IGetSources,
         callback = () => {
             console.error('No callback for GET response');
         }
