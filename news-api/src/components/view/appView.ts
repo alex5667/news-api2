@@ -1,41 +1,16 @@
 import News from './news/news';
 import Sources from './sources/sources';
-
-export interface SourcesData {
-    id: string,
-    name: string,
-    description: string,
-    url: string,
-    category: string,
-    language: string,
-    country: string
-}
-
-export interface NewsData {
-    source: {
-        id: number,
-        name: string
-    },
-    author: string,
-    title: string,
-    description: string,
-    url: string,
-    urlToImage: string,
-    publishedAt: string,
-    content: string,
-}
-
-
+import {INewsData} from './news/news'
+import {ISourcesData} from './sources/sources'
 
 export interface drawNewsData {
     status: string,
     totalResults: number,
-    articles: NewsData[]
+    articles: INewsData[]
 }
-
 export interface drawSourcesData {
     status: string,
-    sources: SourcesData[]
+    sources: ISourcesData[]
 }
 
 

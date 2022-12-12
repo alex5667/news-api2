@@ -10,9 +10,11 @@ export interface ISourcesData {
     country: string
 }
 
-
-class Sources {
-    draw(data: ISourcesData[]) {
+export interface ISources {
+    draw: (data: ISourcesData[]) => void;
+}
+class Sources implements ISources {
+    draw(data: ISourcesData[]):void {
         const fragment:DocumentFragment = document.createDocumentFragment()as DocumentFragment;
         const sourceItemTemp:HTMLTemplateElement = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 

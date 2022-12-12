@@ -16,7 +16,7 @@ export interface INewsData {
 
 
 class News {
-    draw(data: INewsData[]) {
+    draw(data: INewsData[]):void {
         const news:INewsData [] = data.length >= 10 ? data.filter((_item:INewsData, idx:number) => idx < 10) : data;
         const fragment:DocumentFragment = document.createDocumentFragment() as DocumentFragment;
         const newsItemTemp: HTMLTemplateElement = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
