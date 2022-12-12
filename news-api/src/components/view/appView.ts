@@ -13,8 +13,13 @@ export interface drawSourcesData {
     sources: ISourcesData[]
 }
 
+export interface IAppView {
+    drawNews: (data: drawNewsData | undefined) => void;
+    drawSources:(data: drawSourcesData | undefined)=>void
+}
 
-export class AppView {
+
+export class AppView implements IAppView{
     news: News;
     sources: Sources;
     constructor() {
@@ -22,12 +27,12 @@ export class AppView {
         this.sources = new Sources();
     }
 
-    drawNews(data: drawNewsData | undefined) {
+    drawNews(data: drawNewsData | undefined):void {
         const values = data?.articles ? data?.articles : [];
         this.news.draw(values);
     }
 
-    drawSources(data: drawSourcesData | undefined) {
+    drawSources(data: drawSourcesData | undefined):void {
         const values = data?.sources ? data?.sources : [];
         this.sources.draw(values);
     }
