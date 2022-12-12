@@ -1,21 +1,21 @@
 import News from './news/news';
 import Sources from './sources/sources';
-import {INewsData} from './news/news'
-import {ISourcesData} from './sources/sources'
+import {INewsData} from './news/news';
+import {ISourcesData} from './sources/sources';
 
-export interface drawNewsData {
+export interface IDrawNewsData {
     status: string,
     totalResults: number,
     articles: INewsData[]
 }
-export interface drawSourcesData {
+export interface IDrawSourcesData {
     status: string,
     sources: ISourcesData[]
 }
 
 export interface IAppView {
-    drawNews: (data: drawNewsData | undefined) => void;
-    drawSources:(data: drawSourcesData | undefined)=>void
+    drawNews: (data: IDrawNewsData | undefined) => void;
+    drawSources:(data: IDrawSourcesData | undefined)=>void
 }
 
 
@@ -27,12 +27,12 @@ export class AppView implements IAppView{
         this.sources = new Sources();
     }
 
-    drawNews(data: drawNewsData | undefined):void {
+    drawNews(data: IDrawNewsData | undefined):void {
         const values = data?.articles ? data?.articles : [];
         this.news.draw(values);
     }
 
-    drawSources(data: drawSourcesData | undefined):void {
+    drawSources(data: IDrawSourcesData | undefined):void {
         const values = data?.sources ? data?.sources : [];
         this.sources.draw(values);
     }

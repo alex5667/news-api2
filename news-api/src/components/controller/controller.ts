@@ -1,45 +1,12 @@
 import AppLoader from './appLoader';
-
-export interface SourcesData {
-    id: string,
-    name: string,
-    description: string,
-    url: string,
-    category: string,
-    language: string,
-    country: string
-}
-
-export interface NewsData {
-    source: {
-        id: number,
-        name: string
-    },
-    author: string,
-    title: string,
-    description: string,
-    url: string,
-    urlToImage: string,
-    publishedAt: string,
-    content: string,
-}
-
-export interface drawNewsData {
-    status: string,
-    totalResults: number,
-    articles: NewsData[]
-}
-
-export interface drawSourcesData {
-    status: string,
-    sources: SourcesData[]
-}
+import {IDrawNewsData} from '../view/appView';
+import {IDrawSourcesData} from '../view/appView';
 
 
 
 
 class AppController extends AppLoader {
-    getSources(callback: ((data?: drawSourcesData) => void) | undefined) {
+    getSources(callback: ((data?: IDrawSourcesData) => void) | undefined):void {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -48,13 +15,13 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e:MouseEvent, callback:((data?: drawNewsData) => void) | undefined) {
-        let target = e.target as HTMLElement;
-        const newsContainer = e.currentTarget as HTMLElement;
+    getNews(e:MouseEvent, callback:((data?: IDrawNewsData) => void) | undefined):void {
+        let target:HTMLElement = e.target as HTMLElement;
+        const newsContainer:HTMLElement = e.currentTarget as HTMLElement;
 
         while (target !== newsContainer) {
             if ((target as HTMLElement).classList.contains('source__item')) {
-                const sourceId = target.getAttribute('data-source-id') as string;
+                const sourceId:string = target.getAttribute('data-source-id') as string;
                 if (newsContainer.getAttribute('data-source') !== sourceId) {
                     newsContainer.setAttribute('data-source', sourceId);
                     super.getResp(

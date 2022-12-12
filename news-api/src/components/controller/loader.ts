@@ -11,7 +11,6 @@ export interface IGetSources {
 type Callback = <T>(data?: T) => void;
 
 
-
 class Loader {
     baseLink: string;
     options: IOptions;
