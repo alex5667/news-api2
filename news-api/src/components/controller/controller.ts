@@ -24,8 +24,22 @@ export interface NewsData {
     content: string,
 }
 
+export interface drawNewsData {
+    status: string,
+    totalResults: number,
+    articles: NewsData[]
+}
+
+export interface drawSourcesData {
+    status: string,
+    sources: SourcesData[]
+}
+
+
+
+
 class AppController extends AppLoader {
-    getSources(callback: ((data?: SourcesData) => void) | undefined) {
+    getSources(callback: ((data?: drawSourcesData) => void) | undefined) {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -34,7 +48,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e:MouseEvent, callback:((data?: NewsData) => void) | undefined) {
+    getNews(e:MouseEvent, callback:((data?: drawNewsData) => void) | undefined) {
         let target = e.target as HTMLElement;
         const newsContainer = e.currentTarget as HTMLElement;
 
