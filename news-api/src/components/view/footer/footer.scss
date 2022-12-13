@@ -1,0 +1,41 @@
+//====================================================================================================
+.footer {
+
+  // .footer__container
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 490px;
+    // @include adaptiveValue("padding-top", 90, 0);
+  }
+
+  // .footer__mygit
+
+  &__mygit {
+    vertical-align: middle;
+    width: rem(40);
+    height: rem(30);
+
+  }
+
+  // .footer__year
+
+  &__year {
+    vertical-align: middle;
+    font-size: rem(45);
+
+  }
+
+  // .footer__rs
+
+  &__rs {
+    width: rem(40);
+    height: rem(30);
+    vertical-align: middle;
+  }
+}
+
+
+//====================================================================================================

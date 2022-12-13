@@ -1,6 +1,7 @@
+import './footer.scss';
 
 export default class Footer {
-  render():void {
+  render(): void {
     const footerContainer: HTMLDivElement = document.createElement('div') as HTMLDivElement;
     footerContainer.classList.add('footer__container');
     const footerMygit: HTMLDivElement = document.createElement('div') as HTMLDivElement;
@@ -8,7 +9,7 @@ export default class Footer {
     const mygitLink: HTMLElement = document.createElement('a') as HTMLElement;
     mygitLink.classList.add('mygit__link');
     const mygitImg: HTMLImageElement = document.createElement('img') as HTMLImageElement;
-    mygitImg.src = `../footer/github-svgrepo-com.svg`;
+    mygitImg.src = `./github-svgrepo-com.svg`;
     mygitImg.alt = `github link`;
     const footerYear: HTMLDivElement = document.createElement('div') as HTMLDivElement;
     footerYear.classList.add('footer__year');
@@ -18,7 +19,7 @@ export default class Footer {
     const rsLink: HTMLElement = document.createElement('a') as HTMLElement;
     rsLink.classList.add('rs__link');
     const rsImg: HTMLImageElement = document.createElement('img') as HTMLImageElement;
-    rsImg.src = `../footer/rs_school_js.svg`;
+    rsImg.src = `./rs_school_js.svg`;
     rsImg.alt = `Rs-school link`;
     const footer: HTMLElement = document.querySelector('footer') as HTMLElement;
     footer.appendChild(footerContainer);
