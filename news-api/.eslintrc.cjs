@@ -4,7 +4,7 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   root: true,
   "rules": {
-    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-explicit-any": 2,
     '@typescript-eslint/no-var-requires': 0,
   },
   "env": {
