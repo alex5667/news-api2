@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const EslingPlugin = require('eslint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
+
 
 const baseConfig = {
     entry: path.resolve(__dirname, './src/index.ts'),
@@ -55,6 +57,12 @@ const baseConfig = {
             filename: '[name].css',
             chunkFilename: '[id].css',
         }),
+        new CopyPlugin({
+            patterns: [
+                { from: "./src/components/img/", to: "../dist/components/img/" },
+            ],
+        }),
+
 
     ],
 };
