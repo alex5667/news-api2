@@ -10,6 +10,9 @@ const CopyPlugin = require("copy-webpack-plugin");
 const baseConfig = {
     entry: path.resolve(__dirname, './src/index.ts'),
     mode: 'development',
+    optimization: {
+        minimize: false
+    },
     module: {
         rules: [
             {

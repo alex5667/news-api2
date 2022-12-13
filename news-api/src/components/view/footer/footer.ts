@@ -9,7 +9,7 @@ export default class Footer {
     const mygitLink: HTMLElement = document.createElement('a') as HTMLElement;
     mygitLink.classList.add('mygit__link');
     const mygitImg: HTMLImageElement = document.createElement('img') as HTMLImageElement;
-    mygitImg.src = `../../img/github-svgrepo-com.svg`;
+    mygitImg.src = `./components/img/github-svgrepo-com.svg`;
     mygitImg.alt = `github link`;
     const footerYear: HTMLDivElement = document.createElement('div') as HTMLDivElement;
     footerYear.classList.add('footer__year');
@@ -19,7 +19,7 @@ export default class Footer {
     const rsLink: HTMLElement = document.createElement('a') as HTMLElement;
     rsLink.classList.add('rs__link');
     const rsImg: HTMLImageElement = document.createElement('img') as HTMLImageElement;
-    rsImg.src = `../../img/rs_school_js.svg`;
+    rsImg.src = `./components/img/rs_school_js.svg`;
     rsImg.alt = `Rs-school link`;
     const footer: HTMLElement = document.querySelector('footer') as HTMLElement;
     footer.appendChild(footerContainer);

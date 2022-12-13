@@ -28,7 +28,7 @@ class News implements INews {
             const newsItem:Element = newsClone.querySelector('.news__item') as Element;
             if (idx % 2) newsItem && newsItem.classList.add('alt');
             const newsMetaPhoto:HTMLTemplateElement = newsClone.querySelector('.news__meta-photo') as HTMLTemplateElement;
-            if (newsMetaPhoto) newsMetaPhoto.style.backgroundImage = `url(${item.urlToImage || 'img/news_placeholder.jpg'
+            if (newsMetaPhoto) newsMetaPhoto.style.backgroundImage = `url(${item.urlToImage || '/components/img/rest-kinburn.jpg'
                 })`;
             const newsMetaAuthor:Element = newsClone.querySelector('.news__meta-author')as Element;
             if (newsMetaAuthor) newsMetaAuthor.textContent = item.author || item.source.name;
