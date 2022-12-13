@@ -22,19 +22,11 @@ const baseConfig = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
-                test: /\.(png|jpe?g|gif|svg)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                    },
-                ],
-            },
-            {
                 test: /\.s[ac]ss$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
             {
-                test: /\.(?:ico|png|svg|jpg|jpeg|gif)$/i,
+                test: /\.(?:|gif|png|jpg|svg)$/,
                 type: 'asset/resource',
             },
         ],
@@ -59,7 +51,10 @@ const baseConfig = {
         }),
         new CopyPlugin({
             patterns: [
-                { from: "./src/components/img/", to: "../dist/components/img/" },
+                {
+                    from: path.resolve(__dirname, 'src/components/img'),
+                    to: path.resolve(__dirname, 'dist/components/img')
+                }
             ],
         }),
 
