@@ -127,7 +127,8 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-  }
+    min-height: rem(600);
+}
 }
 .sources {
 }
@@ -140,7 +141,6 @@ body {
   width: 100%;
   @include adaptiveValue("margin-bottom", 30, 12);
   @include adaptiveValue("font-size", 16, 12);
-
 }
 .news {
   display: flex;
